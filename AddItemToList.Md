@@ -14,6 +14,7 @@ This scenario shows how text entered into an Entry element can be added to a Col
 1.  Add Entry element to the view.  This is where the user adds a item to the shopping list
 
 '''
+
 <Entry
     Grid.Row="2"
     Grid.Column="0"
