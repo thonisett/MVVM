@@ -6,3 +6,5 @@ This scenario shows how text entered into an Entry element can be added to a Col
 *Adding item to Entry*
 
 
+![Alt text](/Assets/New_item_added.png "Items added to CollectionView")
+*Items added to CollectionView*
