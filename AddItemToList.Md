@@ -11,7 +11,9 @@ The invidual UI elements, such as Entry and CollectionView, communicates to the 
 
 Layout of the View
 
-
+A - This is the Entry element. The user enters an item for the shopping list
+B - Button to add item to shopping list
+C - CollectionView showintg items added to the shopping list
 
 ![Alt text](/Assets/FileStructure.png "a title")
 
