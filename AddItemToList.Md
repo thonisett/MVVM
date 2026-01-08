@@ -1,3 +1,4 @@
-## This sections shows how an item is added from one text box and added to another
+## This section shows how the view model and UI layers update each other.
+# test
 
 
