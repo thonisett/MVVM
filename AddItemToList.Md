@@ -22,4 +22,58 @@ It is vial that the top of the View file contains information that allows it to 
              Title="Create and View Shopping list">
 
 ```
+ The following lines are broken down for more information
 
+The information on the schemas is boiler plate code that does not change
+```
+xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+```
+
+This provides the namespace to the folder in which all the ViewModels are kept
+```
+xmlns:vm="clr-namespace:Shopping_List.ViewModel"
+
+```
+The x:Class direcive configures XAML markup compilation to join partial classes between the markup and code behind
+```
+x:Class="Shopping_List.Views.CreateListView"
+```
+The x:DataType allows the visual mapping of the data bindings between the View and ViewModel 
+```
+x:DataType="vm:CreateListViewModel"
+```
+
+This sets the title for the view page
+```
+Title="Create and View Shopping list
+```
+
+Layout of the CreateListViewModel
+
+```
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using System.Collections.ObjectModel;
+
+namespace Shopping_List.ViewModel
+{
+    public partial class CreateListViewModel : ObservableObject
+    {
+
+
+        [ObservableProperty]
+        private ObservableCollection<string> items = new();
+
+        [ObservableProperty]
+        string? shoppingItem;
+
+        [RelayCommand]
+        public void AddToList()
+        {
+            Items.Add(ShoppingItem);
+            ShoppingItem = string.Empty;
+        }
+    }
+}
+```
