@@ -1,45 +1,21 @@
-## This section shows how the view model and UI layers update each other.
+This section shows how the view and viewmodel works to display shopping items that have been entered into the CreateListView
 
-This scenario shows how text entered into an Entry element can be added to a CollectionView after click on the add button
+Views are the UI's that are written in XAML. Unlike prevous .NET UIs, such as WinForms and WPFs, MAUI strongly discourages any code logic to sit in the .xaml.cs files. Instead, it is
+the role of the ViewModel to manage how data is provided to the View.  Keeping logic code from the View maintains the principles of separation of concerns.
 
-![Alt text](/Assets/Add_new_item.png "Adding item to Entry")
-*Adding item to Entry*
+Each view has its own ViewModel file.
 
+The invidual UI elements, such as Entry and CollectionView, communicates to the CreateViewModel with the use of bindings.
 
-![Alt text](/Assets/New_item_added.png "Items added to CollectionView")
-*Items added to CollectionView*
-
-# Steps how this works
-
-1.  Add Entry element to the view.  This is where the user adds a item to the shopping list
-```
-<Entry
-    Grid.Row="2"
-    Grid.Column="0"
-    Placeholder="Enter Item"
-    Text="{Binding ShoppingItem}" />
-```
-
-
-2.  Add a CollectionView to the View.  This shows all the items added to the Entry element
+It is vial that the top of the View file contains information that allows it to link with the View Model
 
 ```
-<CollectionView
-    Grid.Row="3"
-    Grid.ColumnSpan="3"
-    ItemsSource="{Binding Items}">
-
-    <CollectionView.ItemTemplate>
-        <DataTemplate x:DataType="{x:Type x:String}">
-            <Grid Padding="0,5">
-                <Border>
-                    <Label Text="{Binding .}"
-                       FontSize="18"
-                       Padding="8"/>                 
-                </Border>
-            </Grid>            
-        </DataTemplate>
-    </CollectionView.ItemTemplate>
-</CollectionView>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Shopping_List.ViewModel"
+             x:Class="Shopping_List.Views.CreateListView"
+             x:DataType="vm:CreateListViewModel"
+             Title="Create and View Shopping list">
 
 ```
+
