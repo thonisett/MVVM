@@ -77,3 +77,91 @@ namespace Shopping_List.ViewModel
     }
 }
 ```
+Layout of View
+
+```
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Shopping_List.ViewModel"
+             x:Class="Shopping_List.Views.CreateListView"
+             x:DataType="vm:CreateListViewModel"
+             Title="Create and View Shopping list">
+
+
+    <Grid ColumnSpacing="12"
+          RowSpacing="16"
+          Padding="20">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Star"/>
+            <ColumnDefinition Width="Star"/>
+            <ColumnDefinition Width="Star"/>
+
+        </Grid.ColumnDefinitions>
+
+
+        <Label Grid.Row="0"
+               Grid.Column="0"
+               Text="Select Date"
+               VerticalOptions="Center"/>
+
+        <DatePicker Grid.Row="0"
+                    Grid.Column="1"
+                    VerticalOptions="Center"/>
+
+    
+        <Label Grid.Row="1"
+               Grid.Column="0"
+               Text="Shop"
+               VerticalOptions="Center"/>
+
+        <Entry Grid.Row="1"
+               Grid.Column="1"
+               Placeholder="Enter shop"
+               VerticalOptions="Center"/>
+
+        <Entry
+            Grid.Row="2"
+            Grid.Column="0"
+            Placeholder="Enter Item"
+            Text="{Binding ShoppingItem}" />
+
+        <Button Grid.Row="2"
+                Grid.Column="1"
+                Text="Add Item"
+                VerticalOptions="Center"
+                Command="{Binding AddToListCommand}"/>
+
+
+        <CollectionView
+            Grid.Row="3"
+            Grid.ColumnSpan="3"
+            ItemsSource="{Binding Items}">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="{x:Type x:String}">
+                    <Grid Padding="0,5">
+                        <Border>
+                            <Label Text="{Binding .}"
+                               FontSize="18"
+                               Padding="8"/>
+                            
+                        </Border>
+                    </Grid>
+                    
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+    </Grid>
+
+</ContentPage>
+```
