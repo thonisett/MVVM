@@ -2,5 +2,5 @@
 
 This scenario shows how text entered into an Entry element can be added to a CollectionView after click on the add button
 
-![Alt text](/assets/Add_new_item.png "a title")
+![Alt text](/Assets/Add_new_item.png "a title")
 
