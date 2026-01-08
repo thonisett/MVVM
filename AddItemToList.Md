@@ -7,6 +7,12 @@ Each view has its own ViewModel file.
 
 The invidual UI elements, such as Entry and CollectionView, communicates to the CreateViewModel with the use of bindings.
 
+![Alt text](/Assets/View.png "a title")
+
+Layout of the View
+
+
+
 ![Alt text](/Assets/FileStructure.png "a title")
 
 Layout of Shopping List Project 
