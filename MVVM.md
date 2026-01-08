@@ -1,1 +1,1 @@
-![Alt text](/Assets/MVVM.png "a title")
+![Layout of MVVM Architecture](/Assets/MVVM.png "a title")
