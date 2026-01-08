@@ -23,7 +23,7 @@ This scenario shows how text entered into an Entry element can be added to a Col
 
 2.  Add a CollectionView to the View.  This shows all the items added to the Entry element
 
-'''
+```
 <CollectionView
     Grid.Row="3"
     Grid.ColumnSpan="3"
@@ -42,4 +42,4 @@ This scenario shows how text entered into an Entry element can be added to a Col
     </CollectionView.ItemTemplate>
 </CollectionView>
 
-'''
+```
